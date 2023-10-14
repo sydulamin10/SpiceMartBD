@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from products.models import *
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'home/home.html')
+    cata = category.objects.all()
+    return render(request, 'home/home.html', locals())
